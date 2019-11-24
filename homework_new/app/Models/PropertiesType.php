@@ -9,6 +9,6 @@ class PropertiesType extends Model
     protected $table='property_types';
     public function property()
     {
-        return $this->hasMany('App\Models\Properties','property_type_id','id');
+        return $this->hasOne('App\Models\Properties','property_type_id','id');
     }
 }

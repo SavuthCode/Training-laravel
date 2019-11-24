@@ -112,6 +112,8 @@ class ProperiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $properties=Properties::find($id);
+        $properties->delete();
+        return back();
     }
 }

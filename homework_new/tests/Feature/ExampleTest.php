@@ -21,7 +21,7 @@ class ExampleTest extends TestCase
 
     public function routeProperties()
     {
-        $response = $this->get('propertiesw');
+        $response = $this->get('properties');
 
         $response->assertStatus(200);
     }

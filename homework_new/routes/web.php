@@ -22,4 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 //    Route::resource('properties','Properties\ProperiesController');
 // })->middleware('auth');
 
-Route::resource('properties','Properties\ProperiesController');
+Route::resource('/properties','Properties\ProperiesController');
+Route::resource('/properties-type','Properties\PropertyTypeController');
+Route::resource('/properties-status','Properties\PropertyStatusController');
+Route::resource('/properties-price-history','Properties\PropertyPriceHistoryController');
+Route::resource('/properties-shape','Properties\ShapesController');
+Route::resource('/properties-zone','Properties\ZonesController');

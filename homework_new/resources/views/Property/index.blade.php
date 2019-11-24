@@ -41,7 +41,11 @@
                     <td>
                         <a href="{{route('properties.show',$pro->id)}}" class="btn btn-info"><i class="glyphicon glyphicon-eye-open"></i></a>
                         <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-edit"></i></a>
-                        <a href="#" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></a>
+                        <form action="{{ route('properties.destroy', $pro->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

@@ -30,4 +30,9 @@ class Properties extends Model
     public function propertyPriceHistorys(){
         return $this->hasMany('App\Models\PropertyPriceHistory','property_id','id');
     }
+
+    public function getCodeAttribute()
+    {
+        return str_pad($this->id, 4, "0", STR_PAD_LEFT);
+    }
 }

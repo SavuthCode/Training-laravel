@@ -10,6 +10,6 @@ class PropertyStatus extends Model
     protected $fillable=['name'];
     public function Property()
     {
-        return $this->hasMany('App\Models\Properties','property_status_id','id');
+        return $this->hasOne('App\Models\Properties','property_status_id','id');
     }
 }

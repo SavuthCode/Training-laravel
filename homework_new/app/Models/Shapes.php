@@ -8,6 +8,6 @@ class Shapes extends Model
 {
     public function property()
     {
-        return $this->hasMany('App\Models\Properties');
+        return $this->hasOne('App\Models\Properties');
     }
 }
