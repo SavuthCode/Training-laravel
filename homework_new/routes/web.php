@@ -15,16 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('users', function () {
-//    Route::resource('properties','Properties\ProperiesController');
-// })->middleware('auth');
 
-Route::resource('/properties','Properties\ProperiesController');
-Route::resource('/properties-type','Properties\PropertyTypeController');
-Route::resource('/properties-status','Properties\PropertyStatusController');
-Route::resource('/properties-price-history','Properties\PropertyPriceHistoryController');
-Route::resource('/properties-shape','Properties\ShapesController');
-Route::resource('/properties-zone','Properties\ZonesController');
+
+// Route::group(['middleware'=>['auth']], function () {
+    Auth::routes();
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/properties','Properties\ProperiesController')->middleware('auth');
+    Route::resource('/properties-type','Properties\PropertyTypeController')->middleware('auth');
+    Route::resource('/properties-status','Properties\PropertyStatusController')->middleware('auth');
+    Route::resource('/properties-price-history','Properties\PropertyPriceHistoryController')->middleware('auth');
+    Route::resource('/properties-shape','Properties\ShapesController')->middleware('auth');
+    Route::resource('/properties-zone','Properties\ZonesController')->middleware('auth');
+// });
