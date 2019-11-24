@@ -46,6 +46,7 @@
         <th>galleries</th>
         <th>created_by</th>
         <th>updated</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -57,6 +58,7 @@
         <td>{{$pro->sale_price}}</td>
         <td>{{$pro->sold_price}}</td>
         <td>{{$pro->profile}}</td>
+        <td><{{$pro->galleries}}</td>
         <td>{{$pro->created_by}}</td>
         <td>{{$pro->updated_by}}</td>
         <td>

@@ -1,0 +1,28 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testBasicTest()
+    {
+        $response = $this->get('properties');
+
+        $response->assertStatus(200);
+    }
+
+    public function routeProperties()
+    {
+        $response = $this->get('propertiesw');
+
+        $response->assertStatus(200);
+    }
+}
